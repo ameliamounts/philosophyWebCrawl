@@ -45,7 +45,7 @@ def main(args):
 
     # make sure the inputted url is a wikipedia page 
     page = requests.get(currentURL)
-    if (("https://en.wikipedia.org/wiki/" in currentURL) == False) and page.status_code==200:
+    if (("https://en.wikipedia.org/wiki/" in currentURL) == False) or page.status_code!=200:
         print("Invalid URL")
         return
     
